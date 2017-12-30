@@ -29,5 +29,5 @@ for i in range(1,time_span+1):
 ideal_reading_array.reverse()
 burn_down_chart.add("Ideal Reading Speed",ideal_reading_array)
 burn_down_chart.add("Actual Reading Speed",map(getRemainingPages,pages_read_per_hour))
-burn_down_chart.render_to_file('bar_chart.svg')
+burn_down_chart.render_to_file('burndown.svg')
 
