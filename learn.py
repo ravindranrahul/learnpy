@@ -73,7 +73,7 @@ reading_speed = pygal.Line(
     style=TurquoiseStyle,
     x_title='No. Of Hours Targeted',
     y_title='Reading Speed (Pages)')
-reading_speed.title = 'Reading Speed | Average '+average_speed+'pages/hr'
+reading_speed.title = 'Reading Speed | Average '+average_speed+' pages/hr'
 reading_speed.x_labels = map(str,range(1,61,1))
 reading_speed.add("Pages Per Hour",pages_per_hour)
 reading_speed.render_to_png('reading_speed.png')
