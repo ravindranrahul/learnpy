@@ -1,7 +1,7 @@
 import pygal 
 import numpy as np
 from pygal.style import TurquoiseStyle
-#Assumed time 10hrs 6 day
+#Assumed time 10hrs/day, 6days in total (28 Dec - 2rd Jan)
 time_span = 60
 #total pages ignoring acknowledgement prefatce 
 total_pages = 519
@@ -9,31 +9,19 @@ total_pages = 519
 ideal_increment = 519/60
 #pages read per hour
 reading_progress = [
-    10,
-    19,
-    28,
-    38,
-    50,
-    61,
-    72,
-    72,
-    72,
-    72,
-    77,
-    86,
-    91,
-    91,
-    91,
-    94,
-    100,
-    105,
-    111,
-    122
-]
+    #28 dec
+    10,19,28,38,50,61,72,72,72,72,
+    #29 dec
+    77,86,91,91,91,94,100,105,111,122,
+    #30 dec
+    122,122,122,122,122,122,135,147,153,165,
+    #31 dec
+    193
+    ]
 
 #helper function to calculate remaining pages
 def getRemainingPages(n):
-  return total_pages-n
+    return total_pages-n
   
 burn_down_chart = pygal.Line(
     legend_at_bottom=True,
@@ -41,7 +29,7 @@ burn_down_chart = pygal.Line(
     x_title='No. Of Hours Targeted',
     y_title='Total No of pages in the book')
 burn_down_chart.title = 'Burndown Chart - python crash course by eric matthes'.title()
-burn_down_chart.x_labels = map(str,range(1,61,1))
+burn_down_chart.x_labels = map(str,range(1,time_span+1))
 #ideal reading array
 ideal_reading_array = []
 #generate ideal reading array
@@ -74,6 +62,6 @@ reading_speed = pygal.Line(
     x_title='No. Of Hours Targeted',
     y_title='Reading Speed (Pages)')
 reading_speed.title = 'Reading Speed | Average '+average_speed+' pages/hr'
-reading_speed.x_labels = map(str,range(1,61,1))
+reading_speed.x_labels = map(str,range(1,time_span+1))
 reading_speed.add("Pages Per Hour",pages_per_hour)
 reading_speed.render_to_png('reading_speed.png')

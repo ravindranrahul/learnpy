@@ -1,1 +1,3 @@
-:≈
+1. Python uses arguments and variables refereces by value and not by copy
+2. assignment operators on lists does copy by reference
+3. arguments to functions are by referece
