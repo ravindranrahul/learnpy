@@ -1,0 +1,16 @@
+1. python uses arguments and variables refereces by value and not by copy
+2. assignment operators on lists does copy by reference
+3. arguments to functions are by referece
+4. to copy an array : array[:]
+5. to get last element of array: array[-1] (array[-2] for second last and so on)
+6. python has both positional, keyword arguments and support default argments (like in php)
+7. optional, arbitary and default arguments should be placed at last for positional arguments (obviously!)
+8. Why are you reading this Arjun?
+9. Importing : import module_name , usage: module_name.function(), import module_name as mn (alias)
+10. alt import : from module_name import function_name , usage function_name()
+11. alias  : from module_name import function_name as fn , usage fn()
+12. import all functions from module_name import *
+13. '''Docsctring''' used to describe a function, immediately after the declaration
+14. If you specify a default,keyword value for a parameter, no spaces should be used on either side of the equal sign
+15. If your program or module has more than one function, you can sepa- rate each by two blank lines
+16. All import statements should be written at the beginning of a file. The only exception is if you use comments at the beginning of your file to describe the overall program.
