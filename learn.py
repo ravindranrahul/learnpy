@@ -2,23 +2,22 @@ import pygal
 import numpy as np
 from pygal.style import TurquoiseStyle
 #Assumed time 10hrs/day, 6days in total (28 Dec - 2rd Jan)
-time_span = 60
+time_span = 2*5
 #total pages ignoring acknowledgement prefatce 
-total_pages = 519
+total_pages = 236
 #ideal spead to finish in 6 days (pages / hr)
-ideal_increment = 519/60
+ideal_increment = total_pages/time_span
 #pages read per hour
 reading_progress = [
-    #28 dec
-    10,19,28,38,50,61,72,72,72,72,
-    #29 dec
-    77,86,91,91,91,94,100,105,111,122,
-    #30 dec
-    122,122,122,122,122,122,135,147,153,165,
-    #31 dec
-    193,209,229,248,275,290,315,333,355,
-    #2nd jan
-    380,409,519
+    #before
+    0,5,
+    #27 Mar
+    5,
+    #28 March
+    
+    #29 March
+    #30 March
+    #31 March
     ]
 
 #percentage 
@@ -34,7 +33,7 @@ burn_down_chart = pygal.Line(
     style=TurquoiseStyle,
     x_title='No. Of Hours Targeted',
     y_title='Total No of pages in the book')
-burn_down_chart.title = 'Burndown Chart: Python Crash Course By Eric Matthes | '+reading_percentage+'% Complete'
+burn_down_chart.title = 'Burndown Chart: GRE | '+reading_percentage+'% Complete'
 burn_down_chart.x_labels = map(str,range(1,time_span+1))
 
 #ideal reading array
@@ -68,7 +67,7 @@ reading_speed = pygal.Line(
     x_title='No. Of Hours Targeted',
     y_title='Reading Speed (Pages)')
 
-reading_speed.title = 'Reading Speed: Python Crash Course By Eric Matthes | Avg: '+average_speed+' pages/hr'
+reading_speed.title = 'Reading Speed: GRE | Avg: '+average_speed+' pages/hr'
 reading_speed.x_labels = map(str,range(1,time_span+1))
 reading_speed.add("Pages Per Hour",pages_per_hour)
 reading_speed.render_to_png('reading_speed.png')
